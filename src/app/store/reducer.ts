@@ -32,3 +32,10 @@ export function reducer(state = initialState, action) {
             return state;  
     }
 }
+
+/* Check initial courses is blank. And it is blank indeed.  */
+let status: string;
+status = !initialState.courses.length ? "blank" : "not blank";
+
+console.log("initialState: " + status);
+console.log("initialState.courses: " + initialState.courses);
