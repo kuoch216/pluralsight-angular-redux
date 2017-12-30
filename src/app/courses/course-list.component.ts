@@ -20,6 +20,7 @@ export class CourseListComponent implements OnInit {
   filterChanged(searchText: string) {
     console.log('user searched: ', searchText);
     this.courseActions.filterCourses(searchText);
+    console.log("state is " + this.ngRedux.getState());
   }
 
   ngOnInit() {
