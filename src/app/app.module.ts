@@ -22,6 +22,11 @@ import { NgReduxModule, NgRedux } from 'ng2-redux';
 import { store, IAppState } from './store';
 import { CourseActions } from './courses/course.actions';
 
+import {AppBoardComponent} from './app-board/app-board.component';
+import {AppColumnComponent} from './app-column/app-column.component';
+import {AppCardComponent} from './app-card/app-card.component';
+import { CompileSummaryKind } from '@angular/compiler';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +37,9 @@ import { CourseActions } from './courses/course.actions';
     ToastComponent,
     SpinnerComponent,
     ModalComponent,
+    AppBoardComponent,
+    AppColumnComponent,
+    AppCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +47,10 @@ import { CourseActions } from './courses/course.actions';
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryStoryService, { delay: 500 }),
     AppRoutingModule,
-    NgReduxModule
+    NgReduxModule,
+    RouterModule.forRoot([{
+      path: 'column/id', component: AppColumnComponent 
+    }])
   ],
   providers: [
     CourseService,
